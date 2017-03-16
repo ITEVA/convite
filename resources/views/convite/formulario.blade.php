@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Convite</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.mask.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/principal.js"></script>
-</head>
-<body>
-    <div class="col-md-12 col-sm-12 col-xs-12">
+@extends('layout.principal')
+@section('css')
+    <link href="css/formulario.css" rel="stylesheet" type="text/css">
+@endsection
+@section('conteudo')
+    <div class="col-md-10 col-sm-12 col-xs-12">
         <form id="formConvite" method="POST" action="{{$action}}" enctype="multipart/form-data" data-parsley-validate>
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
@@ -32,7 +25,7 @@
                         </span>
                     @endif
                 </label>
-                <input type="text" id="cnpj" class="form-control obrigatorio cnpj" name="cnpj" placeholder="00.000.000/0000-00"
+                <input type="text" id="cnpj" class="form-control obrigatorio cnpj" name="cnpj" placeholder="__.___.___/____-__"
                        value="{{old('cnpj') !== null ? old('cnpj') : $instituicao->cnpj}}"/>
             </div>
 
@@ -50,7 +43,7 @@
 
             <div class="form-group col-md-2 col-xs-12">
                 <label for="telefone">Telefone*</label>
-                <input type="text" id="telefone" class="form-control obrigatorio fixo" name="telefone" placeholder="(00) 0000-0000"
+                <input type="text" id="telefone" class="form-control obrigatorio fixo" name="telefone" placeholder="(__) ____-____"
                        value="{{old('telefone') !== null ? old('telefone') : $instituicao->telefone}}"/>
             </div>
 
@@ -79,14 +72,15 @@
             </div>
 
             <div class="form-group col-md-2 col-xs-12">
-                <label for="cidade">Cidade</label>
-                <input type="text" id="cidade" class="form-control" name="cidade"
+
+                <label for="cidade">Cidade*</label>
+                <input type="text" id="cidade" class="form-control obrigatorio" name="cidade"
                        value="{{old('cidade') !== null ? old('cidade') : $instituicao->cidade}}"/>
             </div>
 
             <div class="form-group col-md-1 col-xs-12">
-                <label for="uf">UF</label>
-                <select id="uf" name="uf" class="form-control select2_single" tabindex="-1">
+                <label for="uf">UF*</label>
+                <select id="uf" name="uf" class="form-control obrigatorio select2_single" tabindex="-1">
                     <option value="">Selecione uma UF</option>
                     @foreach($ufs as $uf)
                         <option {{$uf == old('uf') || $instituicao->uf == $uf ? 'selected="selected"' : ''}}
@@ -115,7 +109,7 @@
 
             <div class="form-group col-md-2 col-xs-12">
                 <label for="celularConvidado">Celular*</label>
-                <input type="text" class="form-control obrigatorioRepre celular" name="celular_convidado[]" placeholder="(00) 0 0000-0000" value=""/>
+                <input type="text" class="form-control obrigatorioRepre celular" name="celular_convidado[]" placeholder="(__) _ ____-____" value=""/>
             </div>
 
             <div class="form-group col-md-6 col-xs-12">
@@ -130,7 +124,7 @@
 
             <div class="form-group col-md-2 col-xs-12">
                 <label for="celularConvidado">Celular</label>
-                <input type="text" class="form-control celular" name="celular_convidado[]" placeholder="(00) 0 0000-0000" value=""/>
+                <input type="text" class="form-control celular" name="celular_convidado[]" placeholder="(__) _ ____-____" value=""/>
             </div>
 
             <div class="form-group col-md-6 col-xs-12">
@@ -145,12 +139,13 @@
 
             <div class="form-group col-md-2 col-xs-12">
                 <label for="celularConvidado">Celular</label>
-                <input type="text" class="form-control celular" name="celular_convidado[]" placeholder="(00) 0 0000-0000" value=""/>
+                <input type="text" class="form-control celular" name="celular_convidado[]" placeholder="(__) _ ____-____" value=""/>
             </div>
 
             <div class="ln_solid col-md-12 col-xs-12"></div>
             <div class="form-group  col-md-12 col-xs-12">
-                <input id="salvarInstituicao" type="submit" name="salvar" value="Salvar" class="btn btn-success">
+                <input id="salvarInstituicao" type="submit" name="salvar" value="Salvar" class="btn btn-primary">&nbsp;&nbsp;&nbsp;
+                <a href="/">Voltar</a>
             </div>
         </form>
     </div>
@@ -244,5 +239,7 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-</body>
-</html>
+@stop
+@section('js')
+    <script src="js/principal.js"></script>
+@endsection

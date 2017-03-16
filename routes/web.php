@@ -11,5 +11,11 @@
 |
 */
 
+Route::get('/', function()
+{
+    return view('convite.inicio');
+});
+
+
 Route::get('/cadastro', 'InstituicaoController@novo');
 Route::post('/cadastro/salvar', 'InstituicaoController@salvar');
