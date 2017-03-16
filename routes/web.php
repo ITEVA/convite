@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/', 'InstituicaoController@novo');
-Route::post('/salvar', 'InstituicaoController@salvar');
+Route::get('/cadastro', 'InstituicaoController@novo');
+Route::post('/cadastro/salvar', 'InstituicaoController@salvar');

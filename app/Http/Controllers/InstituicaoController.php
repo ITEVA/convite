@@ -16,7 +16,7 @@ class InstituicaoController extends Controller
         $ufs = $this->getUfs();
 
         return view('convite.formulario')
-            ->with('action', '/salvar')
+            ->with('action', 'cadastro/salvar')
             ->with('instituicao', $instituicao)
             ->with('ufs', $ufs);
     }

@@ -72,6 +72,18 @@
                        value="{{old('complemento') !== null ? old('complemento') : $instituicao->complemento}}"/>
             </div>
 
+            <div class="form-group col-md-2 col-xs-12">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" class="form-control" name="bairro"
+                       value="{{old('bairro') !== null ? old('bairro') : $instituicao->bairro}}"/>
+            </div>
+
+            <div class="form-group col-md-2 col-xs-12">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" class="form-control" name="cidade"
+                       value="{{old('cidade') !== null ? old('cidade') : $instituicao->cidade}}"/>
+            </div>
+
             <div class="form-group col-md-1 col-xs-12">
                 <label for="uf">UF</label>
                 <select id="uf" name="uf" class="form-control select2_single" tabindex="-1">
@@ -81,18 +93,6 @@
                                 value="{{$uf}}">{{$uf}}</option>
                     @endforeach
                 </select>
-            </div>
-
-            <div class="form-group col-md-2 col-xs-12">
-                <label for="cidade">Cidade</label>
-                <input type="text" id="cidade" class="form-control" name="cidade"
-                       value="{{old('cidade') !== null ? old('cidade') : $instituicao->cidade}}"/>
-            </div>
-
-            <div class="form-group col-md-2 col-xs-12">
-                <label for="bairro">Bairro</label>
-                <input type="text" id="bairro" class="form-control" name="bairro"
-                       value="{{old('bairro') !== null ? old('bairro') : $instituicao->bairro}}"/>
             </div>
 
             <div class="x_title  col-md-12 col-xs-12">
