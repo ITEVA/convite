@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convite</title>
+
+    <style>
+        .canto{
+            position: absolute;
+        }
+
+        .canto1{
+            left: calc(100% - 489px);
+            top: calc(100% - 100%);
+        }
+
+        .canto2{
+            left: calc(100% - 100%);
+            top: calc(100% - 23.1%);
+        }
+
+        #confirmacao{
+            width: 50%;
+            position: absolute;
+            top: 38%;
+            left: 20%;
+        }
+        
+        @media all and (max-width: 1400px) {
+            #confirmacao {
+                width: 60%;
+            }
+        }
+
+        @media all and (max-width: 940px){
+            #confirmacao {
+                width: 70%;
+                top: 38%;
+                left: 13%;
+            }
+        }
+
+        @media all and (max-width: 860px){
+            .canto1 {
+                left: calc(100% - 45%);
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+<body background="backBody2.jpg">
+<img class="canto canto1" src="canto1.png" alt="">
+
+<img id="confirmacao" src="sucesso.jpg" alt="">
+
+<img class="canto canto2" src="canto2.png" alt="">
+</body>
+</html>
