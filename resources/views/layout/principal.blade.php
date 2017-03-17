@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Convite</title>
+
+    <!-- Url base do sistema -->
+    <base href="{{url('/')}}" target="_self" />
+
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
     <!-- Optional theme -->

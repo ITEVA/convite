@@ -26,8 +26,7 @@ class InstituicaoController extends Controller
         try {
             $this->salvarInstituicao($request);
 
-            return redirect()
-                ->action('InstituicaoController@novo');
+            return view('convite.sucesso');
 
         } catch (QueryException $e) {
             $erro = $e->getMessage();

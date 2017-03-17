@@ -20,7 +20,4 @@ Route::get('/', function()
 Route::get('/cadastro', 'InstituicaoController@novo');
 Route::post('/cadastro/salvar', 'InstituicaoController@salvar');
 
-Route::get('/sucesso', function()
-{
-    return view('convite.sucesso');
-});
+Route::get('/sucesso', 'InstituicaoController@novo');
