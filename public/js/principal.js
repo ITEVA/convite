@@ -7,43 +7,51 @@ $(document).ready(function () {
         e.preventDefault();
         var salvar = true;
 
-        $('.obrigatorio').each(function () {
-            if($(this).val() == '') {
-                salvar = false;
-                $("#erroObrigatorio").modal();
-            }
-        });
-
-        $('.obrigatorioRepre').each(function () {
-            if($(this).val() == '') {
-                salvar = false;
-                $("#erroRepresentante").modal();
-            }
-        });
-
-        $('.fixo').each(function () {
-            if($(this).val() != '') {
-                if (((($(this).val()).toString()).length) < 14) {
-                    salvar = false;
-                    $("#erroTelefone").modal();
-                }
-            }
-        });
-
-        $('.celular').each(function () {
-            if($(this).val() != '') {
-                if (((($(this).val()).toString()).length) < 16) {
-                    salvar = false;
-                    $("#erroCelular").modal();
-                }
-            }
-        });
-
-        var cnpj = $('#cnpj').val().replace(/[^\d]+/g,'');
+        var cnpj = $('#cnpj').val().replace(/[^\d]+/g, '');
 
         if (!validarCNPJ(cnpj)) {
             salvar = false;
             $("#erroCnpj").modal();
+        }
+
+        if (salvar) {
+            $('.obrigatorio').each(function () {
+                if ($(this).val() == '') {
+                    salvar = false;
+                    $("#erroObrigatorio").modal();
+                }
+            });
+        }
+
+        if (salvar) {
+            $('.fixo').each(function () {
+                if ($(this).val() != '') {
+                    if (((($(this).val()).toString()).length) < 14) {
+                        salvar = false;
+                        $("#erroTelefone").modal();
+                    }
+                }
+            });
+        }
+
+        if (salvar) {
+            $('.obrigatorioRepre').each(function () {
+                if ($(this).val() == '') {
+                    salvar = false;
+                    $("#erroRepresentante").modal();
+                }
+            });
+        }
+
+        if (salvar) {
+            $('.celular').each(function () {
+                if ($(this).val() != '') {
+                    if (((($(this).val()).toString()).length) < 16) {
+                        salvar = false;
+                        $("#erroCelular").modal();
+                    }
+                }
+            });
         }
 
         if (salvar) {
