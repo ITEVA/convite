@@ -4,7 +4,7 @@
 @section('conteudo')
     <div id="boxTudo">
         <div class="col-lg-12">
-            <h1 id="title1">Convidamos V.S.ª a aparticipar da primeira etapa das </h1>
+            <h1 id="title1">Convidamos V.S.ª a participar da Primeira Etapa das </h1>
         </div>
 
         <div class="col-lg-12" id="textoInxirido">

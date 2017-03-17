@@ -8,6 +8,10 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
             <div class="x_title  col-md-12 col-xs-12">
+                <h2>Cadastramento para Primeira Etapa das Ações para Fortalecimento das Organizações da Sociedade Civil do Ceará</h2>
+            </div>
+
+            <div class="x_title  col-md-12 col-xs-12">
                 <h2>Informações da Instituição</h2>
             </div>
 
