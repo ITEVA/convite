@@ -21,3 +21,5 @@ Route::get('/cadastro', 'InstituicaoController@novo');
 Route::post('/cadastro/salvar', 'InstituicaoController@salvar');
 
 Route::get('/sucesso', 'InstituicaoController@novo');
+
+Route::get('/email/{id}/{email}', 'InstituicaoController@email');

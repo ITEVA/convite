@@ -27,4 +27,9 @@ class Instituicao extends Model
             'bairro' => ''
         ];
     }
+
+    public function representantes()
+    {
+        return $this->hasMany('App\InstituicaoConvidado', 'id_instituicao');
+    }
 }

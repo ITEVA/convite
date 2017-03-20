@@ -7,6 +7,7 @@ use App\Instituicao;
 use App\InstituicaoConvidado;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class InstituicaoController extends Controller
 {
@@ -68,6 +69,19 @@ class InstituicaoController extends Controller
                 }
                 $i++;
             }
+        }
+    }
+
+    public function email($id, $email)
+    {
+        $instituicao = Instituicao::find($id);
+
+        if (count($instituicao) > 0) {
+            Mail::send('convite.email', ['instituicao' => $instituicao], function ($m) use ($instituicao, $email) {
+                $m->from('nicolas.matos@iteva.org.br', 'Iteva');
+
+                $m->to($email, $instituicao->nome)->subject('Confirmação de convite');
+            });
         }
     }
 
