@@ -16,19 +16,21 @@
             </div>
 
             <div class="x_title  col-md-12 col-xs-12">
+                @if (count($errors) > 0)
+                    <span style="color: red;">
+                                @foreach ($errors->all() as $error)
+                            {{ $error }}
+                        @endforeach
+                            </span>
+                @endif
+            </div>
+
+            <div class="x_title  col-md-12 col-xs-12">
                 <h5>*Campos obrigatórios</h5>
             </div>
 
             <div class="form-group col-md-2 col-xs-12">
-                <label for="cnpj">CNPJ*
-                    @if (count($errors) > 0)
-                        <span style="color: red;">
-                            @foreach ($errors->all() as $error)
-                                {{ $error }}
-                            @endforeach
-                        </span>
-                    @endif
-                </label>
+                <label for="cnpj">CNPJ*</label>
                 <input type="text" id="cnpj" class="form-control obrigatorio cnpj" name="cnpj" placeholder="__.___.___/____-__"
                        value="{{old('cnpj') !== null ? old('cnpj') : $instituicao->cnpj}}"/>
             </div>

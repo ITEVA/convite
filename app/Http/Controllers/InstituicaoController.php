@@ -31,7 +31,7 @@ class InstituicaoController extends Controller
 
         } catch (QueryException $e) {
             $erro = $e->getMessage();
-            if (strpos($erro, "for key 'cnpj_UNIQUE'") !== false) $error = 'Este CNPJ já foi cadastrado.';
+            if (strpos($erro, "for key 'cnpj_UNIQUE'") !== false) $error = 'Instituição já cadastrada, por favor entrar em contato através do email: iteva@iteva.org.br ou pelo telefone: (85) 3362-3210.';
             else $error = $erro;
             return redirect()
                 ->back()
