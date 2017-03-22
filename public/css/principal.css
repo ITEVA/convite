@@ -47,6 +47,22 @@ div#textoInxirido > h1.title2:last-child{
     padding: 3px 3px 3px 3px;
 }
 
+div#textoInxirido2 > h1{
+    font-family: "Trebuchet MS",serif;
+    background: #E58100;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 2.42em;
+    width: 100%;
+    margin: 0;
+    padding: 3px 3px 3px 3px;
+}
+
+div#textoInxirido2{
+    display: none;
+}
+
 h1#title3{
     font-family: "Trebuchet MS",serif;
     text-transform: uppercase;
@@ -63,8 +79,9 @@ div.barra{
     background-color: #E58100;
 }
 
-div.info{
+div.info {
     margin-top: 35px;
+    padding-left: 45px;
 }
 
 p#inxiridao1 {
@@ -171,11 +188,10 @@ h2#title4{
 }
 
 div.rodape{
-    position: absolute;
-    bottom: 0;
+    margin-top: 130px;
     width: 100%;
     height: 30px;
-    border-top: 3px solid #E58100;;
+    border-top: 3px solid #E58100;
 }
 
 img#rodape{
@@ -206,5 +222,218 @@ p.largo{
 @media all and (min-width: 1920px){
     body{
         overflow-y: hidden;
+    }
+}
+
+@media all and (min-width: 1920px){
+    body{
+        overflow-y: hidden;
+    }
+}
+
+@media all and (max-width: 1810px){
+    div.topo {
+        left: calc(100% - 265px);
+    }
+
+    img#topo {
+        width: 264.7px;
+    }
+
+    div.rodape {
+        margin-top: 160px;
+    }
+}
+
+@media all and (max-width: 1735px){
+    div.topo {
+        left: calc(100% - 279px);
+    }
+
+    img#topo {
+        width: 278.7px;
+    }
+
+    div.rodape {
+        margin-top: 189px;
+    }
+}
+
+@media all and (max-width: 1650px){
+    div.info > .col-lg-4 {
+        margin-right: 70px;
+        width: 40%;
+    }
+
+    div.info > .col-lg-5 {
+        width: 45%;
+    }
+
+    div.rodape {
+        margin-top: 211px;
+    }
+}
+
+@media all and (max-width: 1610px){
+    div.topo {
+        left: calc(100% - 285px);
+    }
+
+    img#topo {
+        width: 284.5px;
+    }
+}
+
+@media all and (max-width: 1530px){
+    div.info > .col-lg-4 {
+        margin-right: 40px;
+    }
+
+    div.info > .col-lg-5 {
+        width: 50%;
+    }
+
+    div.rodape {
+        margin-top: 233px;
+    }
+}
+
+@media all and (max-width: 1457px){
+    div.rodape {
+        margin-top: 211px;
+    }
+}
+
+@media all and (max-width: 1380px){
+    div.info > .col-lg-4 {
+        margin-right: 20px;
+    }
+
+    div.info > .col-lg-5 {
+        width: 52%;
+    }
+
+    p.negrito {
+        font-size: 15px;
+    }
+
+    div.rodape {
+        margin-top: 235px;
+    }
+}
+
+@media all and (max-width: 1360px){
+    div.rodape {
+        margin-top: 219px;
+    }
+}
+
+@media all and (max-width: 1315px){
+    div.rodape {
+        margin-top: 195px;
+    }
+}
+
+@media all and (max-width: 1230px) {
+    div.info > .col-lg-4 {
+        margin-right: 35px;
+    }
+
+    div.info > .col-lg-5 {
+        width: 54%;
+    }
+}
+
+@media all and (max-width: 1200px) {
+    div.info > .col-lg-4 {
+        width: 100%;
+    }
+
+    a.inscricaoT{
+        display: none;
+    }
+
+    a.inscricaoD{
+        display: inline-block;
+    }
+
+    div.info > .col-lg-5 {
+        width: 99%;
+        margin-top: 60px;
+
+    }
+
+    img#topo {
+        display: none;
+    }
+
+    div.rodape {
+        margin-top: 195px;
+        position: absolute;
+        top: 100%;
+    }
+
+}
+
+@media all and (max-width: 890px){
+    div#textoInxirido{
+        display: none;
+    }
+
+    div#textoInxirido2{
+        display: block;
+    }
+
+    div#boxTudo {
+        padding-left: 0;
+    }
+
+    p.pInfo {
+        padding-right: 0;
+    }
+    div.info > .col-lg-4 {
+        padding-right: 0;
+    }
+    div.info {
+        padding-left: 20px;
+    }
+}
+
+@media all and (max-width: 680px){
+    p.negrito {
+        font-size: 13px;
+    }
+
+    p.normal {
+        font-size: 13px;
+    }
+
+    p.largo {
+        margin-bottom: -2px;
+    }
+
+    p#inxiridao2 {
+        width: 100%;
+    }
+
+    a#inscricao {
+        padding: 15px 15px 15px 15px;
+    }
+
+    div.info > .col-lg-5 {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    div#textoInxirido2 > h1 {
+        font-size: 2.0em;
+    }
+}
+
+@media all and (max-width: 460px){
+    img#rodape {
+        width: 300px;
+        margin-top: -148px;
     }
 }

@@ -12,6 +12,11 @@
             <h1 class="title2">da Sociedade  Civil do ceará</h1>
         </div>
 
+        <div class="col-lg-12" id="textoInxirido2">
+            <h1 class="title2">Ações para Fortalecimento das Organizações da Sociedade  Civil do ceará</h1>
+        </div>
+        </div>
+
         <div class="col-lg-12 info">
             <div class="col-lg-4">
                 <div class="barra"></div>
@@ -28,44 +33,44 @@
                 <h2 id="title4">Programação</h2>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-10"><p class="negrito">Acolhimento e credenciamento</p></div>
-                        <div class="col-lg-2"><p class="normal hora1l">13h30</p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p class="negrito">Acolhimento e credenciamento</p></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="normal hora1l">13h30</p></div>
                     </div>
                     <div class="row cinzenta">
-                        <div class="col-lg-10"><p class="negrito">Abertura</p></div>
-                        <div class="col-lg-2"><p class="normal hora1l">14h00</p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p class="negrito">Abertura</p></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="normal hora1l">14h00</p></div>
                     </div>
                     <div class="row espacada">
-                        <div class="col-lg-10 line lineLeft"><p class="negrito">Palavra do Secretário do Trabalho e Desenvolvimento Social do Ceará </p><p class="normal cola largo">– Josbertini Virgínio Clementino</p></div>
-                        <div class="col-lg-2 nada"><p></p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 line lineLeft"><p class="negrito">Palavra do Secretário do Trabalho e Desenvolvimento Social do Ceará </p><p class="normal cola largo">– Josbertini Virgínio Clementino</p></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 nada"><p></p></div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-10 line"><p class="negrito">Palavra da Secretária do Trabalho e Assistência Social de Aquiraz</p><p class="normal cola largo">– Denise Moreira de Aguiar</p></div>
-                        <div class="col-lg-2"><p class="normal hora2l">14h10</p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 line"><p class="negrito">Palavra da Secretária do Trabalho e Assistência Social de Aquiraz</p><p class="normal cola largo">– Denise Moreira de Aguiar</p></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="normal hora2l">14h10</p></div>
                     </div>
                     <div class="row espacada">
-                        <div class="col-lg-10 lineLeft"><p class="negrito">Palavra da Presidente do CEDCA </p><p class="normal">– Nadja Furtado Bortolotti</p></div>
-                        <div class="col-lg-2 nada"><p></p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 lineLeft"><p class="negrito">Palavra da Presidente do CEDCA </p><p class="normal">– Nadja Furtado Bortolotti</p></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 nada"><p></p></div>
                     </div>
                     <div class="row cinzenta">
-                        <div class="col-lg-10"><p class="negrito">Explanação sobre as ações de fortalecimento das OSCs </p><p class="normal cola">– Fábio Beneduce</p></div>
-                        <div class="col-lg-2"><p class="normal hora2l">14h40</p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p class="negrito">Explanação sobre as ações de fortalecimento das OSCs </p><p class="normal cola">– Fábio Beneduce</p></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="normal hora2l">14h40</p></div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-10"><p class="negrito">Explanação sobre a Dinâmica de Estruturação  </p><p class="normal cola">– Anderson Pires</p></div>
-                        <div class="col-lg-2"><p class="normal hora2l">15h00</p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p class="negrito">Explanação sobre a Dinâmica de Estruturação  </p><p class="normal cola">– Anderson Pires</p></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="normal hora2l">15h00</p></div>
                     </div>
                     <div class="row cinzenta">
-                        <div class="col-lg-10"><p class="negrito">Atividade em GRUPO</p></div>
-                        <div class="col-lg-2"><p class="normal hora1l">15h20</p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p class="negrito">Atividade em GRUPO</p></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="normal hora1l">15h20</p></div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-10"><p class="negrito">Compilação das ideias</p></div>
-                        <div class="col-lg-2"><p class="normal hora1l">16h20</p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p class="negrito">Compilação das ideias</p></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="normal hora1l">16h20</p></div>
                     </div>
                     <div class="row cinzenta">
-                        <div class="col-lg-10"><p class="negrito">Encerramento/ Próxima Etapas </p><p class="normal cola">– Fábio Beneduce</p></div>
-                        <div class="col-lg-2"><p class="normal hora2l">16h50</p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p class="negrito">Encerramento/ Próxima Etapas </p><p class="normal cola">– Fábio Beneduce</p></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="normal hora2l">16h50</p></div>
                     </div>
                 </div>
             </div>
