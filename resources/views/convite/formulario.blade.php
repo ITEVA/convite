@@ -29,19 +29,19 @@
                 <h5>*Campos obrigatórios</h5>
             </div>
 
-            <div class="form-group col-md-2 col-xs-12">
+            <!-- <div class="form-group col-md-2 col-xs-12">
                 <label for="cnpj">CNPJ*</label>
                 <input type="text" id="cnpj" class="form-control obrigatorio cnpj" name="cnpj" placeholder="__.___.___/____-__"
                        value="{{old('cnpj') !== null ? old('cnpj') : $instituicao->cnpj}}"/>
-            </div>
+            </div> -->
 
-            <div class="form-group col-md-4 col-xs-12">
+            <div class="form-group col-md-5 col-xs-12">
                 <label for="nome">Nome*</label>
                 <input type="text" id="nome" class="form-control obrigatorio" name="nome"
                        value="{{old('nome') !== null ? old('nome') : $instituicao->nome}}"/>
             </div>
 
-            <div class="form-group col-md-4 col-xs-12">
+            <div class="form-group col-md-5 col-xs-12">
                 <label for="email">Email*</label>
                 <input type="text" id="email" class="form-control obrigatorio" name="email"
                        value="{{old('email') !== null ? old('email') : $instituicao->email}}"/>

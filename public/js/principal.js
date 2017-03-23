@@ -7,12 +7,12 @@ $(document).ready(function () {
         e.preventDefault();
         var salvar = true;
 
-        var cnpj = $('#cnpj').val().replace(/[^\d]+/g, '');
+        /*var cnpj = $('#cnpj').val().replace(/[^\d]+/g, '');
 
         if (!validarCNPJ(cnpj)) {
             salvar = false;
             $("#erroCnpj").modal();
-        }
+        }*/
 
         if (salvar) {
             $('.obrigatorio').each(function () {
