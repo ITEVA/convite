@@ -25,7 +25,7 @@
                 <p class="pInfo">Com vistas ao fortalecimento das OSCs, o Conselho Estadual dos Direitos da Criança e do Adolescente do Ceará – CEDCA está encabeçando uma série de ações que poderão colaborar com este propósito e também propiciará maior captação para o Fundo da Infância e da Adolescência.</p>
                 <p class="pInfo">A primeira etapa irá colher subsídios junto às organizações para a formatação das ideias que irão permitir um fortalecimento e crescimento das Organizações da Sociedade Civil. Venha fazer parte desta construção coletiva, trazendo suas opiniões e sugestões.</p>
                 <p id="inxiridao1"><i class="fa fa-calendar"></i>  04 de abril de 2017</p>
-                <p id="inxiridao2"><i class="fa fa-map-marker"></i> &nbsp;Sede do ITEVA - Aquiraz/CE, <a target="_blank" href="https://www.google.com.br/maps/place/Iteva/@-3.9241,-38.3896487,17z/data=!3m1!4b1!4m5!3m4!1s0x7c75ec6854112a7:0xfe35f04956652dbe!8m2!3d-3.9241!4d-38.38746">Veja como chegar</a></p>
+                <p id="inxiridao2"><i class="fa fa-map-marker"></i> &nbsp;Sede do ITEVA - Aquiraz/CE <a target="_blank" href="https://www.google.com.br/maps/place/Iteva/@-3.9241,-38.3896487,17z/data=!3m1!4b1!4m5!3m4!1s0x7c75ec6854112a7:0xfe35f04956652dbe!8m2!3d-3.9241!4d-38.38746">Veja como chegar</a></p>
                 <p id="inxiridao3"><i class="fa fa-phone"></i> 3362-3210 | 3361-2827</p>
                 <a id="inscricao" href="cadastro">Clique aqui para efutuar inscrição</a>
             </div>
@@ -70,7 +70,7 @@
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="normal hora1l">16h20</p></div>
                     </div>
                     <div class="row cinzenta">
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p class="negrito">Encerramento/ Próxima Etapas </p><p class="normal cola">– Fábio Beneduce</p></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p class="negrito">Encerramento/ Próximas Etapas </p><p class="normal cola">– Fábio Beneduce</p></div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="normal hora2l">16h50</p></div>
                     </div>
                 </div>
