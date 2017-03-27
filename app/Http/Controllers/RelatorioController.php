@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\DB;
 class RelatorioController extends Controller
 {
     public function usuarios(){
-        $instituicoes = Instituicao::all();
+        $instituicoes = Instituicao::where('id', '>', '0')->orderBy('nome', 'asc')->get();
 
-        $pdf = new FPDF("P", "pt", "A4");
+        $pdf = new FPDF("L", "pt", "A4");
 
         $pdf->SetTitle('Usuários cadastrados');
 
@@ -30,55 +30,53 @@ class RelatorioController extends Controller
         $pdf->Image('logoBranca.png');
         $pdf->SetXY(245, 80);
         $pdf->SetFont('arial', '', 10);
-        $pdf->Line(20, 80 , 575, 80);
+        $pdf->Line(20, 80 , 820, 80);
 
-        $pdf->SetXY(0, 115);
+        $pdf->SetXY(0, 100);
         $pdf->SetFont('arial', 'B', 10);
-        $pdf->Cell(595, 14, "PESSOAS CADASTRADAS: " , 0, 0, "C");
+        $pdf->Cell(820, 14, "PESSOAS CADASTRADAS: " , 0, 0, "C");
 
         //Tabela total de produtos
-        $pdf->SetXY(20, 140);
+        $pdf->SetXY(20, 120);
         $pdf->SetFont('arial', 'B', 10);
-        $pdf->Cell(180, 20, 'Nome Instituição', 1, 0, "C");
-        $pdf->Cell(149, 20, 'Nome', 1, 0, "C");
-        $pdf->Cell(141, 20, 'E-mail', 1, 0, "C");
-        $pdf->Cell(85, 20, 'Celular', 1, 0, "C");
+        $pdf->Cell(250, 20, 'Nome Instituição', 1, 0, "C");
+        $pdf->Cell(256, 20, 'Nome', 1, 0, "C");
+        $pdf->Cell(200, 20, 'E-mail', 1, 0, "C");
+        $pdf->Cell(95, 20, 'Celular', 1, 0, "C");
 
         $pdf->SetFont('arial', '', 10);
         if(count($instituicoes) > 0) {
             $pdf->SetY($pdf->GetY() + 20);
             foreach ($instituicoes as $instituicao) {
-                $nomeInstituicao = $this->formataDescricao($instituicao->nome, 24);
+                $nomeInstituicao = $this->formataDescricao($instituicao->nome, 40);
                 $descricaoQ = explode("\n", $nomeInstituicao);
                 foreach ($instituicao->representantes as $representante) {
                     $pdf->SetX(20);
-                    $pdf->Cell(180, 14, $descricaoQ[0], 'T, L, R', 0, "C");
-                    $pdf->SetX(200);
-                    $pdf->Cell(149, 14, $representante->nome, 'T, L, R', 0, "C");
-                    $pdf->Cell(141, 14, $representante->email, 'T, L, R', 0, "C");
-                    $pdf->Cell(85, 14, $representante->celular, 'T, L, R', 0, "C");
+                    $pdf->Cell(250, 14, $descricaoQ[0], 'T, L, R', 0, "C");
+                    $pdf->Cell(256, 14, $representante->nome, 'T, L, R', 0, "C");
+                    $pdf->Cell(200, 14, $representante->email, 'T, L, R', 0, "C");
+                    $pdf->Cell(95, 14, $representante->celular, 'T, L, R', 0, "C");
                     $pdf->SetY($pdf->GetY() + 14);
 
                     for ($i = 1; $i < count($descricaoQ); $i++) {
                         $pdf->SetX(20);
-                        $pdf->Cell(180, 14, $descricaoQ[$i], 'L, R', 0, "C");
-                        $pdf->SetX(200);
-                        $pdf->Cell(149, 14, '', 'L, R', 0, "C");
-                        $pdf->Cell(141, 14, '', 'L, R', 0, "C");
-                        $pdf->Cell(85, 14, '', 'L, R', 0, "C");
+                        $pdf->Cell(250, 14, $descricaoQ[$i], 'L, R', 0, "C");
+                        $pdf->Cell(256, 14, '', 'L, R', 0, "C");
+                        $pdf->Cell(200, 14, '', 'L, R', 0, "C");
+                        $pdf->Cell(95, 14, '', 'L, R', 0, "C");
                         $pdf->SetY($pdf->GetY() + 14);
                     }
                 }
 
             }
-            $pdf->Line(20, 497, 575, 497);
+            $pdf->Line(20, $pdf->GetY(), 820, $pdf->GetY());
         }
         $pdf->SetAutoPageBreak(5);
         $pdf->SetFont('arial', '', 10);
         $pdf->SetXY(20, -45);
-        $pdf->Cell(555, 15, "Rodovia CE - 040 s/n - Aquiraz - CE - cep 61.700-000 - cx. postal 66 - fone (85) 3362-3210 - e-mail iteva@iteva.org.br", 'T', 0, 'C');
+        $pdf->Cell(801, 15, "Rodovia CE - 040 s/n - Aquiraz - CE - cep 61.700-000 - cx. postal 66 - fone (85) 3362-3210 - e-mail iteva@iteva.org.br", 'T', 0, 'C');
         $pdf->SetXY(20, -30);
-        $pdf->Cell(555, 15, "www.iteva.org.br", 0, 0, 'C');
+        $pdf->Cell(801, 15, "www.iteva.org.br", 0, 0, 'C');
         $pdf->Output();
         exit;
     }

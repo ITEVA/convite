@@ -30,6 +30,6 @@ class Instituicao extends Model
 
     public function representantes()
     {
-        return $this->hasMany('App\InstituicaoConvidado', 'id_instituicao');
+        return $this->hasMany('App\InstituicaoConvidado', 'id_instituicao')->orderBy('nome', 'asc');
     }
 }
