@@ -78,7 +78,7 @@ class InstituicaoController extends Controller
 
         if (count($instituicao) > 0) {
             Mail::send('convite.email', ['instituicao' => $instituicao], function ($m) use ($instituicao, $email) {
-                $m->from('nicolas.matos@iteva.org.br', 'Iteva');
+                $m->from('iteva@iteva.org.br', 'Iteva');
 
                 $m->to($email, $instituicao->nome)->subject('Confirmação de convite');
             });

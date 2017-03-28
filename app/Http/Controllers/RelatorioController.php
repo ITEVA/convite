@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Instituicao;
+use App\InstituicaoConvidado;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers;
@@ -18,6 +19,10 @@ class RelatorioController extends Controller
 {
     public function usuarios(){
         $instituicoes = Instituicao::where('id', '>', '0')->orderBy('nome', 'asc')->get();
+        $participantes = InstituicaoConvidado::all();
+
+        $contInstituicoes = count($instituicoes);
+        $contPessoas = count($participantes);
 
         $pdf = new FPDF("L", "pt", "A4");
 
@@ -26,39 +31,28 @@ class RelatorioController extends Controller
         //Adiciona uma nova pagina para cada colaborador
         $pdf->AddPage();
 
-        //Desenha o cabeçalho do relatorio
-        $pdf->Image('logoBranca.png');
-        $pdf->SetXY(245, 80);
-        $pdf->SetFont('arial', '', 10);
-        $pdf->Line(20, 80 , 820, 80);
-
-        $pdf->SetXY(19, 100);
-        $pdf->SetFont('arial', 'B', 10);
-        $pdf->Cell(820, 14, "INSTITUIÇÕES CADASTRADAS: " , 0, 0);
-
-        $pdf->SetXY(19, 120);
-        $pdf->SetFont('arial', 'B', 10);
-        $pdf->Cell(820, 14, "PESSOAS CADASTRADAS: " , 0, 0);
-
-        //Tabela total de produtos
-        $pdf->SetXY(20, 145);
-        $pdf->SetFont('arial', 'B', 10);
-        $pdf->Cell(250, 20, 'Nome Instituição', 1, 0, "C");
-        $pdf->Cell(256, 20, 'Nome', 1, 0, "C");
-        $pdf->Cell(200, 20, 'E-mail', 1, 0, "C");
-        $pdf->Cell(95, 20, 'Celular', 1, 0, "C");
+        //Cabeçalho
+        $this->header($pdf, $contInstituicoes, $contPessoas);
 
         $pdf->SetFont('arial', '', 10);
-        $contInstituicoes = 0;
-        $contPessoas = 0;
         if(count($instituicoes) > 0) {
             $pdf->SetY($pdf->GetY() + 20);
             foreach ($instituicoes as $instituicao) {
-                $contInstituicoes++;
                 $nomeInstituicao = $this->formataDescricao($instituicao->nome, 40);
                 $descricaoQ = explode("\n", $nomeInstituicao);
+
+                if($pdf->GetY() + count($descricaoQ) * 20 > 450){
+                    //Rodapé
+                    $this->footer($pdf);
+
+                    $pdf->AddPage();
+                    $pdf->SetY(30);
+                    //Cabeçalho
+                    $this->header($pdf, $contInstituicoes, $contPessoas);
+                    $pdf->SetY($pdf->GetY() + 20);
+                }
+
                 foreach ($instituicao->representantes as $representante) {
-                    $contPessoas++;
                     $pdf->SetX(20);
                     $pdf->Cell(250, 14, $descricaoQ[0], 'T, L, R', 0, "C");
                     $pdf->Cell(256, 14, $representante->nome, 'T, L, R', 0, "C");
@@ -77,24 +71,48 @@ class RelatorioController extends Controller
                 }
 
             }
-            $pdf->Line(20, $pdf->GetY(), 820, $pdf->GetY());
         }
-        $pdf->SetXY(180, 100);
-        $pdf->SetFont('arial', 'B', 10);
-        $pdf->Cell(820, 14, $contInstituicoes , 0, 0);
 
-        $pdf->SetXY(155, 120);
-        $pdf->SetFont('arial', 'B', 10);
-        $pdf->Cell(820, 14, $contPessoas , 0, 0);
+        //Rodape
+        $this->footer($pdf);
 
+        $pdf->Output();
+        exit;
+    }
+
+    public function header($pdf, $contInstituicoes, $contPessoas){
+        //Desenha o cabeçalho do relatorio
+        $pdf->Image('logoBranca.png');
+        $pdf->SetXY(245, 80);
+        $pdf->SetFont('arial', '', 10);
+        $pdf->Line(20, 80 , 820, 80);
+
+        $pdf->SetXY(19, 100);
+        $pdf->SetFont('arial', 'B', 10);
+        $pdf->Cell(820, 14, "INSTITUIÇÕES CADASTRADAS: " .$contInstituicoes, 0, 0);
+
+        $pdf->SetXY(19, 120);
+        $pdf->SetFont('arial', 'B', 10);
+        $pdf->Cell(820, 14, "PESSOAS CADASTRADAS: " .$contPessoas, 0, 0);
+
+        //Tabela total de produtos
+        $pdf->SetXY(20, 145);
+        $pdf->SetFont('arial', 'B', 10);
+        $pdf->Cell(250, 20, 'Nome Instituição', 1, 0, "C");
+        $pdf->Cell(256, 20, 'Nome', 1, 0, "C");
+        $pdf->Cell(200, 20, 'E-mail', 1, 0, "C");
+        $pdf->Cell(95, 20, 'Celular', 1, 0, "C");
+    }
+
+    public function footer($pdf){
+
+        $pdf->Line(20, $pdf->GetY(), 820, $pdf->GetY());
         $pdf->SetAutoPageBreak(5);
         $pdf->SetFont('arial', '', 10);
         $pdf->SetXY(20, -45);
         $pdf->Cell(801, 15, "Rodovia CE - 040 s/n - Aquiraz - CE - cep 61.700-000 - cx. postal 66 - fone (85) 3362-3210 - e-mail iteva@iteva.org.br", 'T', 0, 'C');
         $pdf->SetXY(20, -30);
         $pdf->Cell(801, 15, "www.iteva.org.br", 0, 0, 'C');
-        $pdf->Output();
-        exit;
     }
 
     public function formataDescricao($texto, $quantidade)
