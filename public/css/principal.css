@@ -13,6 +13,15 @@ p.pInfo{
     font-size: 17px;
 }
 
+p#ultimasVagas{
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #cc0000;
+    padding: 10px 10px 10px 80px;
+    width: 330px;
+    border-radius: 25px;
+}
+
 h1#title1{
     font-family: "Trebuchet MS",serif;
     font-weight: 100;
@@ -283,6 +292,10 @@ p.largo{
     div.rodape {
         margin-top: 211px;
     }
+
+    p#ultimasVagas{
+        margin-left: 50px;
+    }
 }
 
 @media all and (max-width: 1610px){
@@ -292,6 +305,10 @@ p.largo{
 
     img#topo {
         width: 284.5px;
+    }
+
+    p#ultimasVagas{
+        margin-left: 90px;
     }
 }
 
@@ -306,6 +323,15 @@ p.largo{
 
     div.rodape {
         margin-top: 233px;
+    }
+
+    div.ultimo{
+        clear: both;
+        margin-top: 50px;
+    }
+
+    p#ultimasVagas{
+        margin-left: 0;
     }
 }
 
@@ -446,5 +472,12 @@ p.largo{
     img#rodape {
         width: 300px;
         margin-top: -148px;
+    }
+}
+
+@media all and (max-width: 370px){
+    p#ultimasVagas{
+        width: 100%;
+        padding-left: 23%;
     }
 }

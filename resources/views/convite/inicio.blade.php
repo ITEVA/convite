@@ -7,9 +7,14 @@
             <h1 id="title1">Convidamos V.S.ª a participar da Primeira Etapa das </h1>
         </div>
 
-        <div class="col-lg-12" id="textoInxirido">
+        <div class="col-lg-6" id="textoInxirido">
             <h1 class="title2">Ações para Fortalecimento das Organizações</h1>
             <h1 class="title2">da Sociedade  Civil do ceará</h1>
+        </div>
+
+
+        <div class="col-lg-6 ultimo">
+            <p id="ultimasVagas">ÙLTIMAS VAGAS!</p>
         </div>
 
         <div class="col-lg-12" id="textoInxirido2">
