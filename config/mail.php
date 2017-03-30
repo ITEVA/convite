@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'nicolas.matos@iteva.org.br', 'name' => 'Convite'],
+    'from' => ['address' => 'iteva@iteva.org.br', 'name' => 'Convite'],
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'username' => 'nicolas.matos@iteva.org.br',
+    'username' => 'iteva@iteva.org.br',
 
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return [
     |
     */
 
-    'password' => 'Iteva100',
+    'password' => 'Midiacom100',
 
     /*
     |--------------------------------------------------------------------------
