@@ -18,6 +18,7 @@ Route::get('/', function()
 
 
 Route::get('/relatorio/NjY2DQo=', 'RelatorioController@usuarios');
+Route::get('/relatorio/NiY2DQo=', 'RelatorioController@usuarios2');
 Route::get('/cadastro', 'InstituicaoController@novo');
 Route::post('/cadastro/salvar', 'InstituicaoController@salvar');
 Route::get('/sucesso', 'InstituicaoController@novo');

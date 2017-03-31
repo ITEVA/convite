@@ -14,7 +14,7 @@
 
 
         <div class="col-lg-6 ultimo">
-            <p id="ultimasVagas">ÙLTIMAS VAGAS!</p>
+            <p id="ultimasVagas">ÚLTIMAS VAGAS!</p>
         </div>
 
         <div class="col-lg-12" id="textoInxirido2">

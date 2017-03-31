@@ -36,14 +36,14 @@
             </div> -->
 
             <div class="form-group col-md-5 col-xs-12">
-                <label for="nome">Nome*</label>
+                <label for="nome">Nome da instituição*</label>
                 <input type="text" id="nome" class="form-control obrigatorio" name="nome"
                        value="{{old('nome') !== null ? old('nome') : $instituicao->nome}}"/>
             </div>
 
             <div class="form-group col-md-5 col-xs-12">
-                <label for="email">Email*</label>
-                <input type="text" id="email" class="form-control obrigatorio" name="email"
+                <label for="email">Email da instituição*</label>
+                <input type="email" id="email" required="required" class="form-control obrigatorio" name="email"
                        value="{{old('email') !== null ? old('email') : $instituicao->email}}"/>
             </div>
 
@@ -110,7 +110,7 @@
 
             <div class="form-group col-md-4 col-xs-12">
                 <label for="emailConvidado">Email*</label>
-                <input type="text" class="form-control obrigatorioRepre" name="email_convidado[]" value=""/>
+                <input type="email" required="required" class="form-control obrigatorioRepre" name="email_convidado[]" value=""/>
             </div>
 
             <div class="form-group col-md-2 col-xs-12">
@@ -125,7 +125,7 @@
 
             <div class="form-group col-md-4 col-xs-12">
                 <label for="emailConvidado">Email</label>
-                <input type="text" class="form-control" name="email_convidado[]" value=""/>
+                <input type="email" required="required" class="form-control" name="email_convidado[]" value=""/>
             </div>
 
             <div class="form-group col-md-2 col-xs-12">
@@ -140,7 +140,7 @@
 
             <div class="form-group col-md-4 col-xs-12">
                 <label for="emailConvidado">Email</label>
-                <input type="text" class="form-control" name="email_convidado[]" value=""/>
+                <input type="email" required="required" class="form-control" name="email_convidado[]" value=""/>
             </div>
 
             <div class="form-group col-md-2 col-xs-12">
