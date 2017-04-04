@@ -11,6 +11,29 @@ use Illuminate\Support\Facades\Mail;
 
 class InstituicaoController extends Controller
 {
+    public function listar () {
+        $pessoas = InstituicaoConvidado::where('id', '>', '0')->orderBy('nome', 'asc')->get();
+
+        return view('convite.listagem')
+            ->with('pessoas', $pessoas);
+    }
+
+    public function presenca ($id) {
+        $pessoas = InstituicaoConvidado::where('id', '>', '0')->orderBy('nome', 'asc')->get();
+        date_default_timezone_set('America/Fortaleza');
+
+        $dados = array (
+            "presente" => "1",
+            "data_chegada" => date('Y-m-d H:i:s')
+        );
+
+        $pessoa = InstituicaoConvidado::find($id);
+        $pessoa->fill($dados);
+        $pessoa->save();
+
+        return redirect("presenca");
+    }
+
     public function novo()
     {
         $instituicao = Instituicao::getEmpty();

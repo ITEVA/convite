@@ -21,8 +21,9 @@
                 <h1 style='font-family: "Trebuchet MS",serif;background: #E58100; font-weight: 400; color: #ffffff; font-size: 25px; width: 350px; margin: 0; padding: 5px 5px 5px 5px;'> ORGANIZAÇÕES DA SOCIEDADE</h1>
                 <h1 style='font-family: "Trebuchet MS",serif;background: #E58100; font-weight: 400; color: #ffffff; font-size: 25px; width: 180px; margin: 0; padding: 5px 5px 5px 5px;'> CIVIL DO CEARÁ</h1>
             </div>
-            <h1 id='inxiridao1' style='font-family: "Trebuchet MS",serif;background-color: #E58100; font-size: 17px; font-weight: bold; padding: 5px 5px 5px 8px; color: #ffffff; width: 225px'>Data: <span style="font-weight: normal"> 04 de abril de 2017,</span></h1>
-            <h1 id='inxiridao2' style='font-family: "Trebuchet MS",serif;background-color: #E58100;font-size: 17px; font-weight: bold; padding: 5px 5px 5px 8px; color: #ffffff; margin-top:  -17px; width: 438px'>Local: <span style="font-weight: normal">sede do ITEVA - Rodovia CE 040, s/n - Aquiraz/CE</span></h1>
+            <h1 id='inxiridao1' style='font-family: "Trebuchet MS",serif;background-color: #E58100; font-size: 17px; font-weight: bold; padding: 5px 5px 5px 8px; color: #ffffff; width: 225px'>Data: <span style="font-weight: normal"> 04 de abril de 2017</span></h1>
+            <h1 id='inxiridao2' style='font-family: "Trebuchet MS",serif;background-color: #E58100;font-size: 17px; font-weight: bold; padding: 5px 5px 5px 8px; color: #ffffff; margin-top:  -17px; width: 438px'>Local: <span style="font-weight: normal">Sede do ITEVA - Rodovia CE 040, s/n - Aquiraz/CE</span></h1>
+            <h1 id='inxiridao2' style='font-family: "Trebuchet MS",serif;background-color: #E58100;font-size: 17px; font-weight: bold; padding: 5px 5px 5px 8px; color: #ffffff; margin-top:  -17px; width: 438px'>Credenciamento: <span style="font-weight: normal"> 13:30 às 14:30</span></h1>
             <div style='margin-top: 25px;'>
                 <p>
                 <div style='width: 65px; height: 5px; background-color: #E58100;'></div>
