@@ -26,7 +26,7 @@ class RelatorioController extends Controller
 
         $pdf = new FPDF("L", "pt", "A4");
 
-        $pdf->SetTitle('Usuários cadastrados');
+        $pdf->SetTitle('Pessoas cadastrados');
 
         //Adiciona uma nova pagina para cada colaborador
         $pdf->AddPage();
@@ -89,7 +89,7 @@ class RelatorioController extends Controller
 
         $pdf = new FPDF("L", "pt", "A4");
 
-        $pdf->SetTitle('Usuários cadastrados');
+        $pdf->SetTitle('Pessoas cadastrados');
 
         //Adiciona uma nova pagina para cada colaborador
         $pdf->AddPage();
@@ -112,6 +112,67 @@ class RelatorioController extends Controller
                     $pdf->SetY(30);
                     //Cabeçalho
                     $this->header2($pdf, $contInstituicoes, $contPessoas);
+                    $pdf->SetY($pdf->GetY() + 20);
+                }
+                $pdf->SetFont('arial', '', 10);
+                $pdf->SetX(20);
+                $pdf->Cell(240, 14, $participante->nome, 'T, L, R', 0, "C");
+                $pdf->Cell(250, 14, $descricaoQ[0], 'T, L, R', 0, "C");
+                $pdf->Cell(216, 14, $participante->email, 'T, L, R', 0, "C");
+                $pdf->Cell(95, 14, $participante->celular, 'T, L, R', 0, "C");
+                $pdf->SetY($pdf->GetY() + 14);
+
+                for ($i = 1; $i < count($descricaoQ); $i++) {
+                    $pdf->SetX(20);
+                    $pdf->Cell(240, 14, '', 'L, R', 0, "C");
+                    $pdf->Cell(250, 14, $descricaoQ[$i], 'L, R', 0, "C");
+                    $pdf->Cell(216, 14, '', 'L, R', 0, "C");
+                    $pdf->Cell(95, 14, '', 'L, R', 0, "C");
+                    $pdf->SetY($pdf->GetY() + 14);
+                }
+
+            }
+        }
+
+        //Rodape
+        $this->footer($pdf);
+
+        $pdf->Output();
+        exit;
+    }
+
+    public function usuariosPresentes(){
+        $instituicoes = Instituicao::where('id', '>', '0')->orderBy('nome', 'asc')->get();
+        $participantes = InstituicaoConvidado::where('id', '>', '0')->where(['presente' => '1'])->orderBy('nome', 'asc')->get();
+
+        $contInstituicoes = count($instituicoes);
+        $contPessoas = count($participantes);
+
+        $pdf = new FPDF("L", "pt", "A4");
+
+        $pdf->SetTitle('Pessoas presentes');
+
+        //Adiciona uma nova pagina para cada colaborador
+        $pdf->AddPage();
+
+        //Cabeçalho
+        $this->header3($pdf, $contInstituicoes, $contPessoas);
+
+        $pdf->SetFont('arial', '', 10);
+        if(count($instituicoes) > 0) {
+            $pdf->SetY($pdf->GetY() + 20);
+            foreach ($participantes as $participante) {
+                $nomeInstituicao = $this->formataDescricao($participante->instituicao->nome, 40);
+                $descricaoQ = explode("\n", $nomeInstituicao);
+
+                if($pdf->GetY() + count($descricaoQ) * 20 > 450){
+                    //Rodapé
+                    $this->footer($pdf);
+
+                    $pdf->AddPage();
+                    $pdf->SetY(30);
+                    //Cabeçalho
+                    $this->header3($pdf, $contInstituicoes, $contPessoas);
                     $pdf->SetY($pdf->GetY() + 20);
                 }
                 $pdf->SetFont('arial', '', 10);
@@ -179,6 +240,26 @@ class RelatorioController extends Controller
         $pdf->SetXY(19, 120);
         $pdf->SetFont('arial', 'B', 10);
         $pdf->Cell(820, 14, "PESSOAS CADASTRADAS: " .$contPessoas, 0, 0);
+
+        //Tabela total de produtos
+        $pdf->SetXY(20, 145);
+        $pdf->SetFont('arial', 'B', 10);
+        $pdf->Cell(240, 20, 'Nome', 1, 0, "C");
+        $pdf->Cell(250, 20, 'Nome Instituição', 1, 0, "C");
+        $pdf->Cell(216, 20, 'E-mail', 1, 0, "C");
+        $pdf->Cell(95, 20, 'Celular', 1, 0, "C");
+    }
+
+    public function header3($pdf, $contInstituicoes, $contPessoas){
+        //Desenha o cabeçalho do relatorio
+        $pdf->Image('logoBranca.png');
+        $pdf->SetXY(245, 80);
+        $pdf->SetFont('arial', '', 10);
+        $pdf->Line(20, 80 , 820, 80);
+
+        $pdf->SetXY(19, 120);
+        $pdf->SetFont('arial', 'B', 10);
+        $pdf->Cell(820, 14, "PESSOAS PRESENTES: " .$contPessoas, 0, 0);
 
         //Tabela total de produtos
         $pdf->SetXY(20, 145);
